@@ -184,7 +184,7 @@ switch eventdata.Key
             
             % Get the probe depths corresponding to the trajectory areas
             probe_depths = gui_data.probe_trajectory_depths - ...
-                gui_data.probe_areas_ax_ylim(1);         
+                (gui_data.probe_areas_ax_ylim(1)+3840);         
             
             probe_ccf(gui_data.use_probe).probe_depths = probe_depths;
             
