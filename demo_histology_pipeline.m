@@ -72,6 +72,10 @@ AP_align_probe_histology(st,slice_path, ...
     spike_times,spike_templates,templateDepths, ...
     1);
 
+% Get areas from the structure tree (ST) at given AV values
+ccf_points_areas = st(probe_ccf.trajectory_areas,:).safe_name;
+probe_ccf.point_areas = ccf_points_areas;
+save([slice_path '\probe_ccf.mat'],'probe_ccf');
 
 %%
 % Extract slices from full-resolution images
